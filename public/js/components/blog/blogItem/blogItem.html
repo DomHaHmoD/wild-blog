@@ -17,6 +17,16 @@
             </div>
             <!-- Display textarea for editing post.content only if editable and in edit mode -->
             <textarea class="materialize-textarea" ng-if="($ctrl.editable && $ctrl.editMode)" ng-model="$ctrl.post.content" placeholder="Content"></textarea>
+<!-- ========================= add by dom ========================================== -->
+             <div ng-if="(!$ctrl.editable || ($ctrl.editable && !$ctrl.editMode))">
+                
+                {{$ctrl.post.datesaisie | limitTo: ($ctrl.editable ? $ctrl.post.datesaisie.length : 110)}}
+            </div>
+            <div>
+           
+                <textarea  ng-if="($ctrl.editable && $ctrl.editMode)" ng-model="$ctrl.post.datesaisie"></textarea>
+            </div>
+<!-- ========================= end :add by dom ======================================= -->
         </div>
 
         <div class="card-action">

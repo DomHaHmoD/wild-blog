@@ -31,4 +31,13 @@ export default ['$stateProvider', '$urlRouterProvider', '$locationProvider', ($s
                 }
             }]
         })
+
+        // add by domi
+        .state('algo1', {
+            url: '/algo1',
+            template: '',
+            controller: []
+                
+               
+        })
 }]
