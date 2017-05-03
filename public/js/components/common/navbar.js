@@ -18,6 +18,11 @@ let navbar = {
                 })
             }
 
+            /*
+            let time = this.moment();
+            this.moment.lang('fr');
+            //console.log(now.format('LLLL'));*/
+
         })
     }]
 }

@@ -82,7 +82,9 @@ let blogItem = {
 
         this.isFav = () => {
             if (!this.post) return
-            return (this.user.bookmarks.find((post_id) => post_id.id === this.post._id))
+
+                //post with _id
+            return (this.user.bookmarks.find((post) => post.id === this.post._id))
         }
 
         this.addOrRemoveToBookmark = () => {
@@ -91,10 +93,12 @@ let blogItem = {
 
             if (!postFound) {
                 //Not found
-                this.user.bookmarks.push(this.post._id)
+                this.user.bookmarks.push(this.post)
             } else {
                 //Found
-                this.user.bookmark = this.user.bookmarks.filtered((post_id) => {
+
+                // bookmark without s
+                this.user.bookmarks = this.user.bookmarks.filtered((post) => {
                     return post_id !== this.post._id
                 })
             }
@@ -108,6 +112,12 @@ let blogItem = {
                 Materialize.toast(toastContent, 4000, 'toast-error')
             })
         }
+
+        $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 15 // Creates a dropdown of 15 years to control year
+        });
+        
 
     }]
 }
