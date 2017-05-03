@@ -35,9 +35,23 @@ export default ['$stateProvider', '$urlRouterProvider', '$locationProvider', ($s
         // add by domi
         .state('algo1', {
             url: '/algo1',
-            template: '',
-            controller: []
-                
-               
+            template: '{{friends}}',
+            controller: ['$scope', function($scope) {
+                function friend(friends){
+                  let table =[];
+                  for (let ami of friends){
+                    console.log(ami);
+                    console.log(ami.length)
+                    if (ami.length === 4){
+                      
+                      table.push(ami);
+                      console.log(table);
+                    }
+                   }
+                   return table;
+                }
+                $scope.friends = friend(["Ryan", "Kieran", "Jason", "Yous"]);
+            }]    
         })
+         
 }]

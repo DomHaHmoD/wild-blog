@@ -17,6 +17,10 @@ module.exports = mongoose.model('Post', new mongoose.Schema({
     datesaisie: {
         type: Date
     }
+    /*isVisible:{
+        type: Boolean
+        // il faudrait ajout default
+    }*/
 }, {
     timestamps: true
 }))
